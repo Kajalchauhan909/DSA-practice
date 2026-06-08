@@ -66,7 +66,7 @@ void pattern4(int row)
         {
             cout << j;
         }
-        
+
         cout << endl;
     }
 }
@@ -74,33 +74,135 @@ void pattern5(int row)
 {
     for (int i = 1; i <= row; i++)
     {
-        for (char j = 'A'; j <= 'A'+row -i; j++)
+        for (char j = 'A'; j <= 'A' + row - i; j++)
         {
             cout << j;
         }
-        
+
         cout << endl;
     }
 }
 void pattern6(int row)
-{ 
+{
     for (int i = 0; i < row; i++)
     {
-        char c= 'A' + i;
+        char c = 'A' + i;
         for (char j = 'A'; j <= 'A' + i; j++)
-        { 
-           
-            cout << c ;
+        {
+
+            cout << c;
+        }
+
+        cout << endl;
+    }
+}
+void pattern7(int row)
+{
+    for (int i = 0; i < row; i++)
+    {
+        
+        for (int j = 0; j < row - i - 1; j++)
+        {
+            cout<<" ";
+        }
+        char ch='A';
+        int breakpoint=(2*i +1)/2;
+         for(int j =0;j<2*i +1;j++)
+         {  
+            cout<<ch;
+            //if(j<i)  you can just simply use this condition to solve
+            if( j>=breakpoint)
+            ch--;
+            else
+            ch++;
+            }
+         for (int j = 0; j < row - i - 1; j++)
+        {
+            cout<<" ";
+        }
+        cout << endl;
+    }
+}
+void pattern8(int row)
+{
+    for (int i = 1; i <= row; i++)
+    {
+        char ch ='A'+ (row - i);
+        for (int j = 0; j <i; j++)
+        {  
+            cout<<ch;
+            ch++;
+        }
+        cout << endl;
+    }
+}
+void pattern9(int row)
+{
+    for (int i = 0; i < row; i++)
+    {
+        
+        for (int j = 0; j <row-1; j++)
+        {   if (i==0 || i==row-1 || j==0 || j==row-2)
+            cout<<"*";
+            else 
+            cout<<" ";
+
+        }
+        cout << endl;
+    }
+}
+void pattern10(int row)
+{
+    for (int i = 0; i < row; i++)
+    {
+        
+        for (int j = row; j >i; j--)
+        {   
+          cout<<"*";  
+          
+        }
+        for (int j = 0; j <2*i; j++)
+        {   
+          cout<<" ";  
+          
+        }
+        for (int j = row; j >i; j--)
+        {   
+          cout<<"*";  
+          
+        }
+        
+        cout << endl;
+    }
+      for (int i = 0; i <row; i++)
+    {
+        
+        for (int j =0; j <=i; j++)
+        {   
+          cout<<"*";  
+          
+        }
+        for (int j = 0; j <2*( row-i-1); j++)
+        {   
+          cout<<" ";  
+          
+        }
+        for (int j = 0; j <=i; j++)
+        {   
+          cout<<"*";  
+          
         }
         
         cout << endl;
     }
 }
 int main()
+
 {
 
     int row;
     cout << "enter the number of rows";
     cin >> row;
-    pattern6(row);
+    pattern10(row);
+    
 }
